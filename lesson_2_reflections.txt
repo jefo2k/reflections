@@ -9,3 +9,22 @@ How is the staging area different from the working directory and the repository?
 	The staging area is a special place were you define witch files will be sent to the repository. 
 The value that staging area offers is all about do not send all your working directory in the next 
 commit, instead of that, you select just the files that you want in the next commit.
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+	To make sure that we will commit just a logical change, we must add to the staging area just the files that makes
+sense to this change. Any other modified file must be discarted.
+
+###Notes
+
+# diff between working directory and staging area (before git add)
+git diff
+
+# diff between staging area and repository (before git commit)
+git diff --staged
+
+# discard changes in the working directory and staging area (be carefull!)
+git reset --hard
+
+# make the most recent commit as HEAD
+git checkout master
