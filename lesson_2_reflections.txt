@@ -15,6 +15,34 @@ How can you use the staging area to make sure you have one commit per logical ch
 	To make sure that we will commit just a logical change, we must add to the staging area just the files that makes
 sense to this change. Any other modified file must be discarted.
 
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+	
+	Branches are very helpfull in organizing your code in situations where, for example, you may have to add some new feature
+with part of your team and meanwhile mainteining the actual code with the rest of the team. In this case, its possible to
+create a new branch to the guys that are working in the new feature meanwhile the others guys that take care of solving bugs
+could work in a master branch. When the job of the first team ends, this two branches could be merged and the master branch
+could be used again.
+
+How do the diagrams help you visualize the branch structure?
+	
+	The diagrams helps understands the structure of the project and identifies branchs that are unreacheable, that can
+prevent problems in commits that could be made in the wrong place.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+	
+	The result of merging two branches is creating a new one with the merged code of the two previous ones. In the diagram
+we will create a new commit with the master branch label.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+	pros:
+		You do not need to worry about the code that do not heve conflicts.
+		Its quick and trustable.
+
+	cons:
+		Do not work when there is conflicts in merges.
+		Git make changes in your code in order to fix merge conflicts.
+
 ###Notes
 
 # diff between working directory and staging area (before git add)
@@ -28,3 +56,49 @@ git reset --hard
 
 # make the most recent commit as HEAD
 git checkout master
+
+# list all branches
+git branch
+
+# creates a new branch
+git branch new_branch_name
+
+# switch to the new branch
+git checkout new_branch_name
+
+# creates a new branch and switch to them
+git checkout -b new_branch_name
+
+# graphical mode to see changes in different branches
+git log --graph --oneline <branch_1> <branch_2> ...
+
+# merging two branches
+git merge branch_name1 branch_name2
+
+# deleting a branch (do not make any change to the commit, just delete the label)
+git branch -d coins
+
+# Restore files to their state before merge have started
+git merge --abort
+
+# Compare a commit to its parent
+git show commit_id
+
+/*
+Merge conflict
+
+If you get a message like this
+
+Auto-merging game.js
+CONFLICT (content): Merge conflict in game.js
+Automatic merge failed; fix conflicts and then commit the result.
+then your files were not in the same state as Caroline's when you started the merge. To fix this, complete the following steps:
+
+Restore your files to their state before you started the merge by running git merge --abort
+Double check the state of your files. If you run git log while the master branch is checked out, you should see Caroline's "Add color" commit as the second-most-recent, and the most recent should be your commit fixing the bullet bug. If you use git diff to compare your commit to Caroline's, your commit should introduce the line this.delayBeforeBullet = 10; on line 424. The line should be indented to the same level as the line below it using only spaces (no tabs), and the line should have no spaces after it.
+Once your file is in the correct state, create a new commit with your changes.
+Try the merge again.
+*/
+
+# shows the last 1 commit
+git log -n 1
