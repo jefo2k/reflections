@@ -1,0 +1,6 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+	This step is necessary to create the metadata information for the files that we want
+control versions. Git works with the concept of repositories and the first thing that we
+need to put our files in a git version control is creating a repository.
+
