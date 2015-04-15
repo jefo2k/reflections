@@ -51,6 +51,13 @@ git diff
 # diff between staging area and repository (before git commit)
 git diff --staged
 
+# add file, or files, to stagging area 
+git add file
+git add file1 file2
+
+# commit changes to the repository
+git commit
+
 # discard changes in the working directory and staging area (be carefull!)
 git reset --hard
 
