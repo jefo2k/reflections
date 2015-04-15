@@ -26,7 +26,7 @@ docs does?
     	More suitable to programming code;
     Cons:
     	Programmers have to be aware about do or do not commits;
-    	Commits could be smaller or bigger than it might be;
+    	Commits could be smaller or bigger than they might be;
 
 Why do you think some version control systems, like Git, allow saving multiple
 files in one commit, while others, like Google Docs, treat each file separately?
@@ -46,8 +46,8 @@ How might using version control make you more confident to make changes that
 could break something?
 
     With the possibility to see all the history changes, get a previous version back 
-and see the differences between two distinct versions makes me much more confident to
-make changes that could break something.
+with a git checkout and see the differences between two distinct versions makes me much 
+more confident to make changes that could break something.
 
 Now that you have your workspace set up, what do you want to try using Git for?
 
